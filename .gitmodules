@@ -1,6 +1,3 @@
-[submodule "lib/mach_star"]
-	path = lib/mach_star
-	url = git://github.com/rentzsch/mach_star.git
 [submodule "lib/inject_and_interpose"]
 	path = lib/inject_and_interpose
 	url = git://github.com/comex/inject_and_interpose.git

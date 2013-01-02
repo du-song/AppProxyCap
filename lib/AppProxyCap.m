@@ -110,6 +110,14 @@ static CFDictionaryRef new_SCDynamicStoreCopyProxies (SCDynamicStoreRef store) {
 												nil];
 			 */ 
 			break;
+        case AppProxy_SOCKS:
+			proxyPref = [[NSDictionary dictionaryWithObjectsAndKeys:
+                          [NSNumber numberWithInt:1], @"SOCKSEnable",
+                          host, @"SOCKSProxy",
+                          [NSNumber numberWithInt:port], @"SOCKSPort",
+                          nil] retain];
+            break;
+            
 			
 		default:
 			/*

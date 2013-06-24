@@ -86,6 +86,15 @@ static CFDictionaryRef new_SCDynamicStoreCopyProxies (SCDynamicStoreRef store) {
 	if (!interpose("_SCDynamicStoreCopyProxies", new_SCDynamicStoreCopyProxies)) NSLog(@"AppProxyCap: error override _SCDynamicStoreCopyProxies");
 }
 
++(void)setPACURL:(NSString *)pacURL {
+	[proxyPref release];
+    proxyPref = [[NSDictionary dictionaryWithObjectsAndKeys:
+                  [NSNumber numberWithInt:1], @"ProxyAutoConfigEnable",
+                  pacURL, @"ProxyAutoConfigURLString",
+                  nil] retain];
+    
+}
+
 + (void) setProxy:(AppProxyType)type Host:(NSString *)host Port:(int)port {
 	[proxyPref release];
 	switch (type) {

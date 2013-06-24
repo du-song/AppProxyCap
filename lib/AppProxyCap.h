@@ -10,7 +10,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef enum {AppProxy_NONE, AppProxy_HTTP, AppProxy_SOCKS} AppProxyType;
+typedef enum {AppProxy_NONE, AppProxy_HTTP, AppProxy_SOCKS, AppProxy_PAC} AppProxyType;
 
 @interface AppProxyCap : NSObject
 
@@ -19,5 +19,6 @@ typedef enum {AppProxy_NONE, AppProxy_HTTP, AppProxy_SOCKS} AppProxyType;
 
 //Set HTTP or Socks proxy to use in app-wide call
 + (void) setProxy:(AppProxyType)type Host:(NSString *)host Port:(int)port;
++ (void) setPACURL:(NSString *)pacURL;
 
 @end

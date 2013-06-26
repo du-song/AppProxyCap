@@ -20,5 +20,6 @@ typedef enum {AppProxy_NONE, AppProxy_HTTP, AppProxy_SOCKS, AppProxy_PAC} AppPro
 //Set HTTP or Socks proxy to use in app-wide call
 + (void) setProxy:(AppProxyType)type Host:(NSString *)host Port:(int)port;
 + (void) setPACURL:(NSString *)pacURL;
++ (void) setNoProxy;
 
 @end
